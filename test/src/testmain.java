@@ -28,6 +28,7 @@ public class testmain {
 		checkString = checkString.replaceAll("?", "\\\\?");
 		checkString = checkString.replaceAll("!", "\\\\!");
 		some comment for testing commit
+		another comment for commit
 		*/
 		 if (checkString == null || checkString.isEmpty()) {
 		        return "";
