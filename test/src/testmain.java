@@ -2,7 +2,7 @@ import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 
 
-public class testmain {
+public class testmain{
 
 	/**
 	 * @param args
