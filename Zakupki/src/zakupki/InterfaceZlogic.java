@@ -8,9 +8,6 @@ package zakupki;
  *
  */
 public interface InterfaceZlogic {
-	static void start() {
-	}
-	void httpPost();
-	void parseAnswer();
-	String httpGet(String url);
+	void start();
+	void parseAnswer(StringBuffer sb);
 }
