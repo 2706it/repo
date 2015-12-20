@@ -15,7 +15,8 @@ public class MainClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ZLogic zl = new ZLogic();
-		zl.start();
+		String query = "вода";
+		zl.start(query);
 	}
 
 }
