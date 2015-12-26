@@ -127,6 +127,70 @@ public class ZLogic implements InterfaceZlogic {
 		return url;
 	}
 	
+	public String setURLPageExtendedSearch(String query, int numPage){
+		String districtIds = "5277399";
+		String regionIds = "5277407";
+		try {
+			query = URLEncoder.encode(query, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String url = "http://zakupki.gov.ru/epz/order/extendedsearch/search.html?"
+				+ "placeOfSearch=FZ_44"
+				+ "&placeOfSearch=FZ_223"
+				+ "&orderPriceFrom="
+				+ "&orderPriceTo="
+				+ "&orderPriceCurrencyId=-1"
+				+ "&deliveryAddress="
+				+ "&participantName="
+				+ "&orderPublishDateFrom=14.12.2015"
+				+ "&orderPublishDateTo=20.12.2015"
+				+ "&orderUpdateDateFrom="
+				+ "&orderUpdateDateTo="
+				+ "&customer.title="
+				+ "&customer.code="
+				+ "&customer.fz94id="
+				+ "&customer.fz223id="
+				+ "&customer.inn="
+				+ "&agency.title="
+				+ "&agency.code="
+				+ "&agency.fz94id="
+				+ "&agency.fz223id="
+				+ "&agency.inn="
+				+ "&districtIds="+districtIds
+				+ "&regionIds="+regionIds 
+				+ "&orderStages=AF"
+				+ "&orderStages=CA"
+				+ "&orderStages=PC"
+				+ "&orderStages=PA"
+				+ "&searchTextInAttachedFile="
+				+ "&applSubmissionCloseDateFrom="
+				+ "&applSubmissionCloseDateTo="
+				+ "&searchString="+query
+				+ "&morphology=true"
+				+ "&strictEqual=false";
+		return url;
+		/* districtIds - федеральный округ
+		 * 5277399 - ДФО
+		 * 
+		 * 
+		 * regionIds - Субъект РФ
+		 * -------------------------
+		 * 5277403 - Амурская обл
+		 * 5277407 - Еврейская Аобл
+		 * 5277404 - Камчатский край
+		 * 5277405 - Магаданская обл
+		 * 5277401 - Приморский край
+		 * 5277400 - Саха/Якутия респ
+		 * 5277406 - Сахалинская обл
+		 * 5277402 - Хабаровский край
+		 * 5277408 - Чукотский АО
+		 * -------------------------
+		 * 
+		 * */
+	}
+	
 	public int getCountPage(ArrayList<String> al){
 		int count = 0;
 		int i = 0;
@@ -285,6 +349,7 @@ public class ZLogic implements InterfaceZlogic {
 	}
 	
 	public void writeAnswer(String q){
+		//quick search
 		String filename = workdir+"\\"+q+"_output.csv";
 		ZCommon.writeFile(filename, "Type;Description;Organization;Amount;Currency;Published", false);
 		String text = "";
